@@ -1,18 +1,14 @@
 pipeline {
-  agent any
-  tools {nodejs "node"}
- 
-  stages {
-    stage('Example') {
-      steps {
-        sh 'npm config ls'
-        sh '''
-            node -v
-            npm -v
-            gulp -v
-            hexo -v
-        '''
-      }
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
+            }
+        }
     }
-  }
 }
